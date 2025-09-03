@@ -49,24 +49,9 @@ const HellyEnglishTutor = () => {
     { letter: 'C', word: 'Cat', gujarati: 'બિલાડી', image: '🐱', sound: '/k/' }
   ];
 
-  //const playWord = (word) => {
+  const playWord = (word) => {
     console.log(`Playing audio for: ${word}`);
   };
-
-
-  // Replace your existing playWord function with this:
-  const playWord = (word) => {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(word);
-      utterance.lang = "en-US";   // English voice
-      utterance.rate = 0.9;       // slower for clarity
-      utterance.pitch = 1;        // normal pitch
-      window.speechSynthesis.speak(utterance);
-    } else {
-      console.log("Speech synthesis not supported in this browser.");
-    }
-  };
-
 
   const handleAnswer = (answer) => {
     setSelectedAnswer(answer);
